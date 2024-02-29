@@ -1,0 +1,14 @@
+.catskils{
+    background-color: #f5f5f7;
+    border-radius: 5px;
+    border: 1px solid #0C83FA;
+    padding: 0 30px;
+}
+
+.catskils p{
+    color: #5c6078;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px auto;
+}

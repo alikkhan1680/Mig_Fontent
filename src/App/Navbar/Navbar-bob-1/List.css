@@ -1,0 +1,17 @@
+.List{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #868AA5;
+    margin:20px;
+}
+
+.List h1{
+    color: #868AA5;
+    margin-left: 10px;
+}
+.icons{
+    font-size: 30px;
+    color:#0C83FA; 
+}
+

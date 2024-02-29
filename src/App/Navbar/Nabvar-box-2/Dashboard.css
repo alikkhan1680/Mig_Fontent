@@ -1,0 +1,17 @@
+.Dashboard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:20px;
+}
+
+.Dashboard h3{
+    margin-left: 5px;
+    color: #5c6078;
+}
+
+
+.Dsvg{
+    color:#0C83FA;  
+    font-size: 25px;
+}

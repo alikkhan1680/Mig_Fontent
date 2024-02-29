@@ -1,0 +1,17 @@
+.paymant{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.paymant h3{
+    color:#5c6078;
+    margin-left: 5px;
+}
+
+.Psvg{
+    color: #0C83FA;
+    font-size:25px;
+}

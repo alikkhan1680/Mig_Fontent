@@ -1,0 +1,17 @@
+.lesson{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.lesson h3{
+    color:#5c6078;
+    margin-left:5px;
+}
+
+.lsvg{
+    color:#0C83FA;  
+    font-size: 25px;
+}
+
