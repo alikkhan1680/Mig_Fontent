@@ -1,26 +1,57 @@
 import './App.css';
-import LoginPage from "./Login/Login";
-import React, { useState } from 'react';
 import Navbar from './Navbar';
-import Category from './App/Category/Category';
+import Direction from './App/Direction/Direction';
 import CourseIndex from './CourseIndex';
-
+import Elon from './Elon/Elon';
+import Card from './Information/Card_info';
+import React, { useState, useEffect } from 'react';
 
 
 function App() {
- const [login, setlogin] = useState(false)
+  const [elon, setelon] = useState([]);
+  const [course, setcourse] = useState([]);
+  const [Data, setData] = useState([])
+  const [coursesate, setcoursestatse] = useState(true)
+  const menu  = [...new Set( course.map( (val) => val.direction.directionName))]
+ 
+  useEffect( ()=> {
+    fetch('http://127.0.0.1:8000/Elonlar/')
+    .then( (res) => res.json())
+    .then( (response) => setelon(response))
+    .catch( (err) => console.log(err, 'elon errorlari'))
+  }, [])
+
+
+
+  useEffect( ()=> {
+    fetch("http://127.0.0.1:8000/Course/")
+    .then( (res) => res.json())
+    .then( (response) => setcourse(response))
+    .catch( (err) => console.log("bu course errori hisoblanadi"))
+  }, [])
+
+
+  const HandlerClick = (dir) => { 
+    const newval = course.filter( (val) => val.direction.directionName === dir)
+    setData(newval)
+    setcoursestatse(false)
+  }
+  
+
+  
+
+
 
   return (
     <div className="App">
-      {login? <LoginPage /> : null}
       <Navbar />
-      <Category />
-      <CourseIndex />
-      <CourseIndex />
-      <CourseIndex />
+      <hr />
+      <Elon elon={elon}/>
+      <Direction HandlerClick={HandlerClick}  directions={menu} />
+      <CourseIndex Data={Data} /> 
+      <Card />
     </div>
   );
 }
 
 export default App;
-

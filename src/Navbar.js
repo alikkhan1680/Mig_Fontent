@@ -5,14 +5,15 @@ import CompNav_3 from "./App/Navbar/Navbar-box-3/CompNav-3";
 
 
 
-function Navbar(){
+function Navbar({ setselectedlogin, setAuth, setregister }){
     return (
         <div className="navbar">
            <CompNav_1 />
            <CompNav_2 />
-           <CompNav_3 />
+        <CompNav_3 setAuth={setAuth} setregister={setregister} />
         </div>
     )
+
 }
 
 export default  Navbar;
