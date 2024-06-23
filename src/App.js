@@ -3,8 +3,9 @@ import Navbar from './Navbar';
 import Direction from './App/Direction/Direction';
 import CourseIndex from './CourseIndex';
 import Elon from './Elon/Elon';
-import Card from './Information/Card_info';
 import React, { useState, useEffect } from 'react';
+import InfoCard from './Information/Card_info';
+
 
 
 function App() {
@@ -12,6 +13,8 @@ function App() {
   const [course, setcourse] = useState([]);
   const [Data, setData] = useState([])
   const [coursesate, setcoursestatse] = useState(true)
+  const [CourseInfo, setCourseInfo] = useState([])//bu State coursni bosganda shu bosilgan course qiymatlarini saqlaydi va info cardga jo'natish uchun 
+  const [cardstate, setcardstate] = useState(false)
   const menu  = [...new Set( course.map( (val) => val.direction.directionName))]
  
   useEffect( ()=> {
@@ -31,11 +34,20 @@ function App() {
   }, [])
 
 
+  const HandelInfo = (val) => {
+    setCourseInfo(val)
+    setcardstate(true)
+  }
+
   const HandlerClick = (dir) => { 
     const newval = course.filter( (val) => val.direction.directionName === dir)
     setData(newval)
     setcoursestatse(false)
   }
+ 
+const HandelAn = () =>{
+  setcardstate(false)
+}
   
 
   
@@ -48,8 +60,8 @@ function App() {
       <hr />
       <Elon elon={elon}/>
       <Direction HandlerClick={HandlerClick}  directions={menu} />
-      <CourseIndex Data={Data} /> 
-      <Card />
+      <CourseIndex Data={Data} HandelInfo={HandelInfo}/> 
+      {cardstate && <InfoCard HandelAn={HandelAn} CourseInfo={CourseInfo} cardstate={cardstate}/>}
     </div>
   );
 }

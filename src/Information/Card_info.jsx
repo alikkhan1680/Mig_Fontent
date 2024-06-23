@@ -1,13 +1,25 @@
 import './Card_info.css';
 
-function Card(){
-    return (
-        <div  class="card_had">
-            <h1>card</h1>
-            <h1>card 2</h1>
-        </div>
-    )
+function InfoCard( {CourseInfo, cardstate, HandelAn}){
+    if(!cardstate){
+        return (<div className='card_hard'></div>)
+    }{
+        return (
+            <div className='card_had '>
+                <div className='row'>
+                     <div className='col-md-6'>
+                         <div><img src={CourseInfo.teachers.userPicture}/></div>
+                     </div>
+                     <div className='col-md-6'>
+                         <h3>{CourseInfo.teachers.first_name}</h3>
+                     </div>
+                     <button onClick={() => HandelAn()}>btn</button>
+                </div>
+            </div>
+         )
+    }
+    
 }
 
 
-export default Card;
+export default InfoCard;

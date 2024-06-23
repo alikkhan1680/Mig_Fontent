@@ -5,7 +5,7 @@ import moment from 'moment';
 
 
 
-function CourseIndex({ Data}){
+function CourseIndex({ Data, HandelInfo}){
     return (
         <div className="bodyDiv">
                 {Data.map( (val) => (
@@ -32,7 +32,7 @@ function CourseIndex({ Data}){
                         <hr/>
                         <div className="footer">
                             <p>{val.price} Min, So`m</p>
-                            <button className="button">Info <CgArrowUpR className="svg"/></button>
+                            <button className="button" onClick={()=> HandelInfo(val)}>Info <CgArrowUpR className="svg"/></button>
                         </div>
                     </div>
                 </div>
