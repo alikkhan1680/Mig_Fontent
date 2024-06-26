@@ -52,7 +52,7 @@ const HandelAn = () =>{
 
   
 
-
+// course infoni course ichi ga kirgizish kerak  va stattelarni hammasini app da olib tahslash kerak //
 
   return (
     <div className="App">
