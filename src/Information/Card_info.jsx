@@ -47,7 +47,6 @@ function InfoCard( {CourseInfo, cardstate, HandelAn}){
                          <h5><b>Topic Name : </b>{CourseInfo.courseName}</h5>
                          <h5><b>Price : </b>{CourseInfo.price} Min. So'm</h5>
                          <h5><b>Collected Money : </b>{CourseInfo.jamgarma} Min. So'm</h5>
-                         {console.log(CourseInfo.jamgarma, 'bu jamgarma ')}
                          <h5><b>Duration : </b>{CourseInfo.duration} <MdOutlineTimer /></h5>
                          <h5><b>MaxStudents Count : </b>{CourseInfo.maxStudentsCount}</h5>
                          <h5><b>Now Students : </b>{CourseInfo.students_count}</h5>

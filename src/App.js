@@ -9,12 +9,22 @@ import InfoCard from './Information/Card_info';
 
 
 function App() {
-  const [elon, setelon] = useState([]);
-  const [course, setcourse] = useState([]);
-  const [Data, setData] = useState([])
-  const [coursesate, setcoursestatse] = useState(true)
+  const [elon, setelon] = useState([]); // elonlar chqishligi uchun database dan kelgan malumotlarni olishga yordam beruvchi state
+  const [course, setcourse] = useState([]);  // Coursedan kelgan malumotlarni saqlashlig uchun ishlatilibgan stat hisoblanadi 
+  const [Data, setData] = useState([]) //Direction va courslarni malumotlarini filterlab ajratiishga yordamlashuvchi state
   const [CourseInfo, setCourseInfo] = useState([])//bu State coursni bosganda shu bosilgan course qiymatlarini saqlaydi va info cardga jo'natish uchun 
   const [cardstate, setcardstate] = useState(false)
+
+
+  useEffect( () => {
+    if(Data.length === 0){
+      setData(course)
+    }
+  })
+ 
+
+
+  
   const menu  = [...new Set( course.map( (val) => val.direction.directionName))]
  
   useEffect( ()=> {
@@ -39,23 +49,24 @@ function App() {
     setcardstate(true)
   }
 
+  
   const HandlerClick = (dir) => { 
     const newval = course.filter( (val) => val.direction.directionName === dir)
-    setData(newval)
-    setcoursestatse(false)
+    setData(newval) 
   }
+
+ 
  
 const HandelAn = () =>{
   setcardstate(false)
 }
   
 
-  
-
+ 
 // course infoni course ichi ga kirgizish kerak  va stattelarni hammasini app da olib tahslash kerak //
 
   return (
-    <div className="App">
+    <div className="App" >
       <Navbar />
       <hr />
       <Elon elon={elon}/>
