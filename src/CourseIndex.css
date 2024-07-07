@@ -7,8 +7,6 @@
     border: 1px solid #ccc;
     border-radius: 12px;
     padding: 30px;
-    max-height: 470px;
-    min-height: 470px;
   }
   @media (max-width: 992px) {
     .courseindex{
@@ -25,7 +23,18 @@
    display: flex;
    flex-wrap: wrap;
    margin-top: 70px;
-}
+   margin-bottom: 100px;
+   max-height: 1000px;
+   overflow: hidden;
+   overflow-y: auto; 
+   border-bottom: 1px solid #ccc; /* Soya qismi pastki chegarasi */
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  }
+
+  .bodyDiv::-webkit-scrollbar {
+    display: none; /* Chrome, Safari va Opera brauzerlari uchun */
+  }
+
 
 
 

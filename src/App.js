@@ -5,6 +5,7 @@ import CourseIndex from './CourseIndex';
 import Elon from './Elon/Elon';
 import React, { useState, useEffect } from 'react';
 import InfoCard from './Information/Card_info';
+import Footer from './Footer/Footer';
 
 
 
@@ -19,12 +20,10 @@ function App() {
   useEffect( () => {
     if(Data.length === 0){
       setData(course)
-    }
+    }//bu code cours larni refreshdan so'ng default ekranga chiqarish uchun ishlatilinadmi 
   })
  
 
-
-  
   const menu  = [...new Set( course.map( (val) => val.direction.directionName))]
  
   useEffect( ()=> {
@@ -39,7 +38,10 @@ function App() {
   useEffect( ()=> {
     fetch("http://127.0.0.1:8000/Course/")
     .then( (res) => res.json())
-    .then( (response) => setcourse(response))
+    .then( (response) => {
+      setcourse(response);
+      setData(response.slice(0, 5))
+    } )
     .catch( (err) => console.log("bu course errori hisoblanadi"))
   }, [])
 
@@ -49,13 +51,16 @@ function App() {
     setcardstate(true)
   }
 
-  
-  const HandlerClick = (dir) => { 
-    const newval = course.filter( (val) => val.direction.directionName === dir)
-    setData(newval) 
+
+  const HandelAll = (dir) => {
+    if (dir === "All") {
+      setData(course);
+    } else {
+      const newval = course.filter((val) => val.direction.directionName === dir)
+      setData(newval);
+    }
   }
 
- 
  
 const HandelAn = () =>{
   setcardstate(false)
@@ -63,16 +68,16 @@ const HandelAn = () =>{
   
 
  
-// course infoni course ichi ga kirgizish kerak  va stattelarni hammasini app da olib tahslash kerak //
 
   return (
     <div className="App" >
       <Navbar />
       <hr />
       <Elon elon={elon}/>
-      <Direction HandlerClick={HandlerClick}  directions={menu} />
+      <Direction   directions={menu} HandelAll={HandelAll} />
       <CourseIndex Data={Data} HandelInfo={HandelInfo}/> 
       {cardstate && <InfoCard HandelAn={HandelAn} CourseInfo={CourseInfo} cardstate={cardstate}/>}
+      <Footer/>
     </div>
   );
 }
