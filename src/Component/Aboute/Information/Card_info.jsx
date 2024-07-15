@@ -2,6 +2,7 @@ import './Card_info.css';
 import React, { useState, useEffect } from 'react';
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { MdOutlineTimer } from "react-icons/md";
+import { AiTwotoneCopy } from "react-icons/ai"
 import moment from 'moment';
 
 
@@ -21,6 +22,10 @@ function InfoCard( {CourseInfo, cardstate, HandelAn}){
       }, 2000); // Wait for 2 seconds before hiding
     }
   }, [cardstate]);
+
+  const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text);
+};
     
       return (
          <div className={`card_had ${cardstate ? 'show' : ''}`}>     
@@ -51,7 +56,10 @@ function InfoCard( {CourseInfo, cardstate, HandelAn}){
                          <h5><b>MaxStudents Count : </b>{CourseInfo.maxStudentsCount}</h5>
                          <h5><b>Now Students : </b>{CourseInfo.students_count}</h5>
                          <h5><b>Course Link : </b><a href={CourseInfo.course_link}>Link for Avslible</a> </h5>
-                         <button class="button-89" role="button"><IoMdArrowRoundBack />     Joining</button>
+                         <h5 onClick={() => copyToClipboard(CourseInfo.courseNumber)}>
+                            <b>CourseNumber:      {CourseInfo.courseNumber}  </b>     <AiTwotoneCopy className='icon' />
+                         </h5>
+                         {/* <button class="button-89" role="button"><IoMdArrowRoundBack />     Joining</button> */}
                      </div>
 
           </div>

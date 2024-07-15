@@ -1,0 +1,180 @@
+.nav_component{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.Nav_box_1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #868AA5;
+    margin:20px;
+}
+
+.Nav_box_1 h1{
+    color: #868AA5;
+    margin-left: 10px;
+}
+.icons{
+    font-size: 30px;
+    color:#0C83FA; 
+}
+
+/* box 2 css */
+.Nav_box_2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Dashboard css */
+
+.Dashboard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:20px;
+}
+
+.Dashboard h3{
+    margin-left: 5px;
+    color: #5c6078;
+    font-size: 19px;
+    padding: 6px;
+}
+
+
+.Dsvg{
+    color:#0C83FA;  
+    font-size: 25px;
+}
+
+
+
+/* Lesson css */
+
+.lesson{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.lesson h3{
+    color:#5c6078;
+    margin-left:5px;
+    font-size: 19px;
+    padding: 6px;
+}
+
+.lsvg{
+    color:#0C83FA;  
+    font-size: 25px;
+}
+
+
+
+/* Payment css */
+
+.paymant{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.paymant h3{
+    color:#5c6078;
+    margin-left: 5px;
+    font-size: 19px;
+    padding:6x;
+}
+
+.Psvg{
+    color: #0C83FA;
+    font-size:25px;
+}
+
+
+.Nav_box_3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Login css */
+
+#login{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+    background-color: #f5f5f7;
+    border-radius: 5px;
+    height: 65px;
+    width: 180px;
+}
+
+.img{
+    border: 1px solid #0C83FA;
+    border-radius: 50%;
+    width: 60px;}
+
+#login p{
+    color:#5c6078;
+    margin-left:10px;
+    align-items:center;
+    margin: 5px;
+}
+
+#Lsvg{
+    margin-right: 5px;
+}
+
+#login img{
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    box-shadow: 0px 0.5px 2px  2px rgb(25, 144, 183);
+    margin: 10px;
+}
+
+
+/* Msg css */
+
+.message{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px;
+}
+
+.Msvg{
+    color:#0C83FA;
+    font-size: 25px;
+}
+
+/* Wearninng css */
+
+.warning{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+.Wsvg{
+    color:#0C83FA;
+    font-size: 25px;
+}
+
+/* Navbar css */
+.navbar{
+    display: flex;
+    background-color:white;
+    justify-content: center;
+    align-items: center;
+    justify-content:space-between;
+}

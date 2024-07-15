@@ -193,3 +193,9 @@
   background: var(--color);
   color: #fff;
 }
+
+
+.icon{
+  font-size: 23px;
+  margin-left: 20px;
+}

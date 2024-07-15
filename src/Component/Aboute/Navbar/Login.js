@@ -1,8 +1,10 @@
 import { GoChevronDown } from "react-icons/go";
-import "./Login.css";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
+const  logo = "https://www.cleanpng.com/png-computer-icons-person-5874887/"
 
 
-export default function Login({setAuth, setregister}){
+export default function Login(){
 
     return (
     
@@ -11,8 +13,12 @@ export default function Login({setAuth, setregister}){
                 <p>dilshod</p>
                 <GoChevronDown calss="btn btn-secondary dropdown-toggle Lsvg"  type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <button className="dropdown-item" type="button" onClick={ ()=> setAuth(true)} >Login</button>
-                    <button className="dropdown-item" type="button" onClick={ ()=> setregister(true)}>Sign</button>
+                    <button className="dropdown-item" type="button">
+                        <Link style={{ color: 'inherit', textDecoration: 'none' }} to='/login'>Login</Link>
+                    </button>
+                    <button className="dropdown-item" type="button">
+                        <Link style={{ color: 'inherit', textDecoration: 'none' }} to="/registration">Sign_in</Link>
+                    </button>
                     <button className="dropdown-item" type="button" href="login.js"> Log-out</button>
                 </div>
       </div>
