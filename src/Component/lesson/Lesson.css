@@ -2,3 +2,143 @@
     display: flex;
     align-items: stretch;
 }
+/* umumiy car uchun yozilgan css lari */
+.courseindex {
+    box-sizing: border-box;
+    width: calc(30.33% );
+    margin: 10px auto;
+    background-color: #F7FBFF;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 30px;
+  }
+  @media (max-width: 992px) {
+    .courseindex{
+      width: calc(50% - 10px);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .courseindex{
+      width: 100%;
+    }
+  }
+.bodyDiv{
+   display: flex;
+   flex-wrap: wrap;
+   margin-top: 70px;
+   margin-bottom: 100px;
+   max-height: 1000px;
+   overflow: hidden;
+   overflow-y: auto; 
+   border-bottom: 1px solid #ccc; /* Soya qismi pastki chegarasi */
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  }
+
+  .bodyDiv::-webkit-scrollbar {
+    display: none; /* Chrome, Safari va Opera brauzerlari uchun */
+  }
+
+
+
+
+
+
+
+/* header qismidagi vaqt picture name classlari uchun yozilgan csslari */
+.courseheader{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 30%;
+}
+
+.img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+    width: 70px;
+    height: 70px;
+    box-shadow: 0px 0.5px 2px  2px rgb(25, 144, 183);
+}
+.picture{
+    border-radius: 50%;
+    width: 85px;
+    height: 85px;
+
+}
+
+.data{
+    margin: auto;
+}
+.cat{
+    background-color:  #DFEEFF;
+    color: #007DFA;
+    border-radius: 20px;
+    padding:5px 25px;
+    font-size: 14px;
+}
+
+.time{
+  color:rgb(90, 86, 86);
+}
+/* card ichidagi malumotlarning orta qismidagi classlar uchun yozilgan   */
+.body{
+  margin-top: 10px;
+  height: 210px;
+  margin-bottom:30px;
+}
+
+.body h4{
+  display:flex;
+  color: #221f1f;
+}
+
+.body p{
+  max-width: 100%;
+  max-height: 220px;
+  text-align: start;
+  color:rgb(90, 86, 86);
+  margin-bottom: 10px;
+}
+
+
+
+
+/* eng pastgi qisim uchun footer uchun yozilgan css lari  */
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.button{
+    width: 55%;
+    background-color: #3896f3;
+    padding:5px ;
+    border-radius: 6px;
+    color: white;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    text-decoration: none;
+    border: 1px solid  #3896f3;
+    border-style: none;
+    }
+
+button:focus {
+      outline: none; /* Tugma fokus qilinganda har qanday chiziq o'chiriladi */
+    }
+
+
+.svg{
+    margin-left: 80px;
+    font-size: 30px;
+
+}
+
+
+
+
