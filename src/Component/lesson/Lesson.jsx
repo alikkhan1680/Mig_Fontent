@@ -6,7 +6,6 @@ function Lesson(){
         <div>
             <div className="lesson">
             <h1>lesson Course</h1>
-                
             </div>
         </div>
     )
